@@ -7,7 +7,7 @@ public class Queue {
 
     public Queue(int n) {
         max = n;
-        data = new int[max];
+        data = new int [max];
         size = 0;
         front = rear = -1;
     }
@@ -63,6 +63,7 @@ public class Queue {
     public void Enqueue(int dt) {
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
+            System.exit(0); // modifikasi overflow
         } else {
             if (IsEmpty()) {
                 front = rear = 0;
@@ -82,6 +83,7 @@ public class Queue {
         int dt = 0;
         if (IsEmpty()) {
             System.out.println("Queue masih kosong");
+            System.exit(0); // modifikasi undeflow
         } else {
             dt = data[front];
             size--;
